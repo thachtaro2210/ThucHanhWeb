@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../fonts/fontawesome-free-6.4.2-web/fontawesome-free-6.4.2-web/css/all.css">
+    <title>Bai 6c</title>
+</head>
+<body>
+    <label for="">Name</label>
+    <input type="text">
+
+    <label for="">Telephone Number</label>
+    <input type="number">
+
+    <label for="">Favorite Color:</label>
+    <input type="color" value="#ffffff">
+
+    <label for="">Date of Birth:</label>
+    <input type="date" value="2015-07-16">
+
+    <div class="calender">
+        <span>July </span>
+        <select name="year" id="year" style="border: 0;">
+            <option value="1">2015</option>
+        </select>
+        <div class="calender__icon">
+            <i class="fa-solid fa-caret-left"></i>
+            <i class="fa-solid fa-circle circle"></i>
+            <i class="fa-solid fa-caret-right"></i>
+        </div>
+
+        <div class="calender-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sun</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                    </tr>
+                </thead>
+                <div class="line"></div>
+                <tbody>
+                    <tr>
+                        <td class="disable grey">28</td>
+                        <td class="disable grey">29</td>
+                        <td class="disable grey">30</td>
+                        <td class="disable">1</td>
+                        <td class="disable">2</td>
+                        <td class="disable">3</td>
+                        <td class="disable">4</td>
+                    </tr>
+                    <tr>
+                        <td class="disable">5</td>
+                        <td class="disable">6</td>
+                        <td class="disable">7</td>
+                        <td class="disable">8</td>
+                        <td class="disable">9</td>
+                        <td class="disable">10</td>
+                        <td class="disable">11</td>
+                    </tr>
+                    <tr>
+                        <td class="disable">12</td>
+                        <td class="disable">13</td>
+                        <td class="disable">14</td>
+                        <td class="disable">15</td>
+                        <td class="disable today">16</td>
+                        <td class="disable">17</td>
+                        <td class="disable">18</td>
+                    </tr>
+                    <tr>
+                        <td class="disable">19</td>
+                        <td class="disable">20</td>
+                        <td class="disable">21</td>
+                        <td class="disable">22</td>
+                        <td class="disable">23</td>
+                        <td class="disable">24</td>
+                        <td class="disable">25</td>
+                    </tr>
+                    <tr>
+                        <td class="disable">26</td>
+                        <td class="disable">27</td>
+                        <td class="disable">28</td>
+                        <td class="disable">29</td>
+                        <td class="disable">30</td>
+                        <td class="disable">31</td>
+                        <td class="disable grey">1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <input type="submit">
+</body>
+<style>
+    .grey {
+        color: grey;
+    }
+
+    body  {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        margin: 32px auto;
+        border: 1px solid black;
+        position: relative;
+        padding: 8px;
+    }
+
+    body input[type="text"], body input[type="number"] {
+        width: 150px;
+    }
+
+    body input[type="date"] {
+        width: 130px;
+    }
+
+    body input {
+        margin-bottom: 12px;
+    }
+
+    .calender {
+        position: relative;
+        width: 94%;
+        border: 1px solid black;
+        padding: 8px;
+    }
+
+    .calender__icon {
+        position: absolute;
+        display: inline-block;
+        right: 0;
+    }
+
+    .calender__icon i {
+        border: 1px solid black;
+        padding: 4px 8px;
+        margin-right: 8px;
+    }
+
+    .calender__icon i:first-child {
+        margin-right: 32px;
+    }
+
+    .calender__icon .circle {
+        font-size: 10px;
+        padding: 8px 8px 6px 8px;
+        position: absolute;
+        right: 30px;
+    }
+
+    .calender-table {
+        margin-top: 16px;
+    }
+
+    .calender-table {
+        border: 1px solid black;
+        position: relative;
+    }
+
+    .calender-table th,
+    .calender-table td {
+        padding: 4px;
+        text-align: center;
+    }
+
+    .calender-table thead {
+        border-bottom: 1px solid black;
+    }
+
+    .today {
+        background-color: magenta;
+    }
+
+    .line {
+        width: 100%;
+        height: 1px;
+        background-color: grey;
+        position: absolute;
+        top: 28px;
+    }
+
+    input[type="submit"] {
+        width: 80px;
+        margin: 16px 0 0 64px;
+    }
+</style>
+</html>

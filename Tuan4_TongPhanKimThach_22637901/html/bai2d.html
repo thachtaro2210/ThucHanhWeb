@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cau 2d</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <style>
+        .container {
+            width: 620px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container border">
+        <div class="row">
+            <div class="col">
+                <label for="first-name">First name</label>
+                <input type="text" placeholder="Mark" class="form-control border-success" id= "first-name">
+                <div class="text-success">Looks good!</div>
+            </div>
+            <div class="col">
+                <label for="last-name">Last name</label>
+                <input type="text" placeholder="Otto" class="form-control border-success" id="last-name">
+                <div class="text-success">Looks good!</div>
+            </div>
+            <div class="col">
+                <label for="username">Username</label>
+                <div class="input-group">
+                    <div class="input-group-prepend input-group-text">@</div>
+                    <input id="username" type="text" class="form-control border-danger" placeholder="Username">
+                    <div class="text-danger">Please choose a uername.</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <label for="city">City</label>
+                <input type="text" placeholder="City" class="form-control border-danger" id="city">
+                <div class="text-danger">Please provide a valid city</div>
+            </div>
+
+            <div class="col">
+                <label for="state">State</label>
+                <input type="text" placeholder="State" class="form-control border-danger" id="state">
+                <div class="text-danger">Please provide a valid state.</div>
+            </div>            
+            
+            <div class="col">
+                <label for="zip">Zip</label>
+                <input type="text" placeholder="Zip" class="form-control border-danger">
+                <div class="text-danger">Please provide a valid zip.</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input type="checkbox" name="agree" id="agree">
+                <label for="agree" class="text-danger pl-2 pt-2"> Agree to terms and coditions</label> <br>
+                <div class="text-danger pl-4">You must agree before submitting</div>
+            </div>
+        </div>
+        <button class="btn btn-primary mt-3 mb-3">Submit form</button>
+    </div>
+</body>
+</html>

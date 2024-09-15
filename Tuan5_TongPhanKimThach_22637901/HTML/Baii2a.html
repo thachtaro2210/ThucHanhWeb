@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai 2a</title>
+    <link rel="stylesheet" href="../bootstrap/CSS/bootstrap.min.css">
+    <script src="../bootstrap/JS/bootstrap.bundle.min.js"></script>
+    <style>
+        label {
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .container{width: 40%;}
+    </style>
+</head>
+<body style = "font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    <div class="container border border-primary mt-2 pr-0 pl-0" style="border-top: 3px double #007bff !important;">
+        <div class="table-responsive pr-5 pl-5" style="background-color: #F7FAFF;">
+            <table class="table table-hover">
+                <thead>
+                    <th width = "70%"><h3>Checkout</h3></th>
+                    <th></th>
+                </thead>
+                <tbody class = "border-0">
+                    <tr>
+                        <td>
+                            <h3>Product 1</h3>
+                            <p class="text-secondary">
+                                Lorem ipsum dolor sit amet
+                            </p>
+                        </td>
+                        <td class = "align-middle">
+                            <h3>$200</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h3>Product 2</h3>
+                            <p class="text-secondary">
+                                Lorem ipsum dolor sit amet
+                            </p>
+                        </td>
+                        <td class = "align-middle">
+                            <h3>$120</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h3>Total</h3>
+                        </td>
+                        <td>
+                            <h3>$320</h3>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <br>
+        <h2 class = "pr-5 pl-5">Credit Card Details</h2>
+        <hr class="mr-5 ml-5">
+        <form class = "form-group pr-5 pl-5" action="/action_page.php">
+            <div class="row">
+                <div class="col-7">
+                    <label class = "text-muted" for="c-holder">CARD HOLDER</label>
+                </div>
+                <div class="col-5 px-0">
+                    <label class = "text-muted" for="month">EXPIRATION DATE</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-7">
+                    <input class = "form-control"type="text" name="c-holder" id="c-holder" placeholder="Card Holder">
+                </div>
+                <div class="col-2 px-0">
+                    <input class = "form-control"type="text" name="month" id="month" placeholder="MM">
+                </div>
+                <div class="col-1 px-0 text-center">
+                    <p style="line-height: 40px;">/</p>
+                </div>
+                <div class="col-2 pl-0">
+                    <input class = "form-control"type="text" name="year" id="year" placeholder="YY">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8">
+                    <label class = "text-muted" for="c-number">CARD NUMBER</label>
+                </div>
+                <div class="col-4">
+                    <label class = "text-muted" for ="cvc">CVC</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8">
+                    <input class = "form-control"type="text" name="col-1" id="c-number" placeholder="Card Number">
+                </div>
+                <div class="col-4">
+                    <input class = "form-control"type="text" name="cvc" id="cvc" placeholder="CVC">
+                </div>
+            </div>
+            <br>
+            <input type="submit" value="Proceed" class = "btn btn-primary form-control" style = "font-weight: 600 !important;">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính Điểm Trung Bình</title>
+</head>
+<body>
+    <script>
+        var diemTB = parseFloat(prompt("Nhập vào điểm trung bình: "));
+        if(diemTB < 0 || diemTB > 10 ){
+            alert("Nhập sai điểm trung bình");
+        }
+        else{
+            if (diemTB >= 8){
+                alert("Giỏi");
+            }
+            else if (diemTB>=6.5){
+                alert("Khá");
+            }
+            else if (diemTB >=5){
+                alert("Trung bình");
+            }
+            else{
+                alert("Yếu");
+            }
+        }
+    </script>
+</body>
+</html>

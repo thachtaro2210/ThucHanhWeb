@@ -1,0 +1,111 @@
+*{
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+body{
+    margin-top: 10px;
+    width: 960px;
+    height: 790px;
+    border: 1px solid green;
+}
+h2, h3{
+    font-family: Arial, Helvetica, sans-serif;
+}
+header{
+    height: 80px;
+    border-bottom: 3px solid gold;
+    width: 100%;
+}
+header img{
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+}
+nav{
+    background-image: url(./img/back.jpg);
+    float: left;
+    width: 19.8%;
+    height: 708px;
+    
+}
+nav a{
+    text-decoration: none;
+}
+nav li{
+    display: block;
+    margin-left: 10px;
+    margin-right: auto;
+    width: 80%;
+    list-style: none;
+    margin-top: 8px;
+    border-bottom: 2px dashed goldenrod  ;
+}
+section{
+    margin-left: 10px;
+    float: left;
+    width: 78%;
+    height: 670px;
+}
+h3{
+    padding: 10px 0px;
+    color: rgb(220, 190, 22);
+}
+section p{
+    margin-top: 10px;
+    color: rgb(162, 69, 19);
+    
+}
+section img{
+    float: left;
+}
+
+h2{
+    color: rgb(220, 190, 22);
+    margin-bottom: 15px;
+}
+#ad1{
+    padding: 10px 0;
+    position: absolute;
+    background-color: rgb(249, 250, 240);
+    float: right;
+    height: 190px;
+    border: 5px inset rgb(197, 193, 193);
+    width: 200px;
+    color: rgb(162, 69, 19);
+    display: block;
+    margin: -21px 19px 81px 407px;
+}
+#ad2{
+    padding: 10px 0;
+    position: absolute;
+    background-color: rgb(249, 250, 240);
+    float: right;
+    height: 130px;
+    border: 5px inset rgb(197, 193, 193);
+    width: 180px;
+    color: rgb(162, 69, 19);
+    display: block;
+    margin: 223px 19px 81px -61px;
+}
+#ad3{
+    padding: 10px 0;
+    position: absolute;
+    background-color: rgb(249, 250, 240);
+    float: right;
+    height: 130px;
+    border: 5px inset rgb(197, 193, 193);
+    width: 180px;
+    color: rgb(162, 69, 19);
+    display: block;
+    margin: 400px 19px 81px 387px;
+}
+footer{
+    padding: 10px;
+    text-align: center;
+    float:inline-start;
+    width: 80%;
+    height: 40px;
+    border-top: 3px solid gold;
+    color: gold;
+    font-weight: bold;
+}

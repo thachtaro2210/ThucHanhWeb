@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+    --primary-color: #666;
+    --border-color: #ccc;
+    --white-color: white;
+    --h1-color: rgb(220, 20, 60);
+}
+
+.active {
+    display: inline;
+}
+
+.hidden {
+    display: none;
+}
+
+.orange {
+    color: orange;
+}
+
+.main {
+    width: 100%;
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+}
+
+/*--------------header------------------*/
+header h1 {
+    text-align: center;
+    color: var(--h1-color);
+    text-shadow: 6px 16px 6px  rgba(220, 20, 60, 0.3);  
+    font-size: 3.6rem; 
+    font-weight: 300;
+}
+
+header nav {
+    border: 1px solid var(--border-color);
+    margin-top: 16px;
+}
+section a {
+    font-size: 1.4rem;
+}
+
+header a {
+    text-decoration: none;
+    color: var(--white-color);
+    padding: 8px 16px;
+    border-right: 1px solid var(--border-color);
+}
+
+header i {
+    margin-left: 64px;
+}
+.nav_search {
+    display: inline-block;
+    margin-left: 32px;
+}
+
+.nav_search input{
+    padding: 2px 6px;
+}
+
+nav {
+    height: 48px;
+    line-height: 48px;
+    background-color: rgba(220, 20, 60, 0.4);
+    font-size: 1.6rem;
+    position: relative;
+}
+
+nav img {
+    width: 24px;
+    margin-left: 64px;
+}
+
+/*----------------------------------------------------*/
+/*------------------section------------------------*/
+section {
+    width: calc(100% - 500px);
+    top: 0;
+    padding: 0 16px;
+}
+
+section h1,
+section a {
+    color: var(--h1-color);
+}
+
+section h1 {
+    width: 400px;
+    padding: 0 16px;
+    margin: 8px auto;
+    background-color: rgba(220, 20, 60, 0.4);
+    font-size: 2.8rem;
+    font-weight: 600;
+    letter-spacing: 12px;
+}
+
+section ul {
+    margin-left: 32px;
+    font-size: 1.6rem;
+}
+
+section a {
+    font-size: 1.8rem;
+}
+
+section input[type="text"],
+section input[type="email"],
+section select {
+    display: block;
+    float: left;
+    width: 45%;
+    margin: 8px 8px;
+    padding: 8px;
+}
+
+section input[type="radio"] {
+    margin: 12px 16px;
+}
+
+section label {
+    font-size: 1.6rem;
+}
+
+textarea {
+    margin-top: 8px;
+    width: 94%;
+    margin: 8px 8px;
+}
+
+section input[type="submit"],
+section input[type="button"] {
+    padding: 4px 8px;
+}
+
+section input[type="submit"] {
+    margin-left: 8px;
+}
+
+/*------------left aside----------------------*/
+.left-aside {
+    width: 230px;
+}
+
+.left-aside img {
+    border-radius: 100%;
+    width: 100%;
+    box-shadow: 8px 16px 12px 8px rgba(220, 20, 60, 0.3);
+}
+
+.left-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.8rem;
+}
+
+.left-text a {
+    text-decoration: none;
+    color: var(--white-color);
+    background-color: rgba(220, 20, 60, 0.4);
+    border-radius: 16px;
+    padding: 6px 16px;
+    margin-bottom: 8px;
+}
+
+/*--------------right aside-------------------*/
+
+.right-aside {
+    display: inline-block;
+    height: 100%;
+    background-color: black;
+    color: var(--white-color)
+}
+
+.right-aside h1 {
+    font-size: 2.8rem;
+}
+
+.right-space {
+    margin: 16px 32px;
+    width: 230px;
+}
+
+.right-space h3 {
+    font-size: 1.8rem;
+}
+
+.right-space p {
+    font-size: 1.2rem;
+}
+
+.right-space img {
+    width: 100%;
+}
+
+.right-space a {
+    color: rgb(241, 186, 213);
+}
+
+.right-space a {
+    cursor: pointer;
+    user-select: none;
+}
+
+/*-----------------footer---------------------*/
+footer {
+    background-color: rgba(220, 20, 60, 0.4);
+    color: var(--white-color);
+    text-align: center;
+    height: 64px;
+    line-height: 64px;
+    font-size: 2rem;
+}

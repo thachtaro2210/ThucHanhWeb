@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai 6b</title>
+</head>
+<body>
+    <h1>Contact Us</h1>
+    <div class="head">
+        <span class="head-text">Your message</span>
+        <span class="head-label">To</span> <input type="text" placeholder="Example Cafe"> <br>
+        <span class="head-label">Your email</span> <input type="text" name="" id=""> <br>
+        <div class="message">
+            <span class="head-label height-center">Message</span> <textarea name="" id="" cols="50" rows="8"></textarea> <br>
+        </div>
+        <span class="head-label">Attach file</span> <input type="file">
+    </div>
+    <div class="body">
+        <span class="head-text">How you found us:</span>
+        <span class="body-label">How did you hear of us</span>
+        <select name="hear us" id="hear-us">
+            <option value="1">Google</option>
+            <option value="2">facebook</option>
+            <option value="3">tiktok</option>
+        </select>
+        <br>
+        <span class="body-label">Newsletter</span>
+        <input type="checkbox" class="magin-bot-16"> Ensure this box is checked if you would like to receive email updates
+    </div>
+    <div class="footer">
+        <button>Send message</button>
+    </div>
+</body>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .margin-bot-16 {
+        margin-bottom: 16px;
+    }
+    
+    body {
+        width: 99%;
+        margin: 2px auto;
+        border: 1px solid black;
+        width: 700px;
+    }
+
+    .head {
+        width: 99%;
+        border: 1px solid black;
+        margin: auto;
+        position: relative;
+        margin-top: 24px;
+        padding-left: 11px;
+        padding: 12px;
+    }
+
+    .head-text {
+        position: absolute;
+        display: block;
+        background-color: white;
+        top: -10px;
+        left: 10px;
+    }
+    .head .head-label {
+        display: inline-block;
+        width: 71px;
+    } 
+
+    .message {
+        display: flex;
+        align-items: center;
+        margin: 2px 0 4px 4px;
+    }
+    /*body*/
+    .body {
+        width: 99%;
+        border: 1px solid black;
+        margin: auto;
+        position: relative;
+        margin-top: 12px;
+        padding-left: 12px;
+        padding: 12px;
+        position: relative;
+    }
+    
+    .body-label {
+        display: inline-block;
+        width: 151px;
+        margin-bottom: 4px;
+    }
+
+    .body select {
+        width: 130px;
+    }
+
+    button {
+        padding: 2px;
+        border-radius: 3px;
+        margin: 1px 0 12px 1px;
+    }
+</style>
+</html>

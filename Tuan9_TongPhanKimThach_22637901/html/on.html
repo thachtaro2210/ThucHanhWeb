@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <script src="../bootstrap/js/jquery-3.7.1.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script>
+    
+    
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <img src="../img/website.png" alt="" width="100%">
+            </div>
+        </div>
+        <div class="row mt-2" style="border-bottom: 1px solid;">
+            <nav class="navbar-expand">
+
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#">Đăng Nhập</a> </li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal"
+                            data-target="#myModal">Đăng Kí</a></li>
+
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div>
+        <div>
+            <h3 class="text-center">Danh Sach</h3>
+        </div>
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>taki</th>
+                        <th>taki1</th>
+                        <th>taki2</th>
+                        <th>taki3</th>
+                        <th>taki4</th>
+                        <th>taki5</th>
+                        <th>taki6</th>
+                        <th>taki7</th>
+                    </tr>
+                </thead>
+                <tbody id="danhsach">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>Thông tin học viên</h4>
+                    <button class="btn btn-close" data-dismiss="modal" data-bs-dismiss="modal">
+
+                    </button>
+
+
+                </div>
+                <div class="modal-body">
+                    <form action="" class="">
+                        <div class="row">
+                            <div class="col-4">
+                                <label for="">Họ Và Tên</label>
+
+                            </div>
+                            <div class="col-8">
+                                <input type="text" class="form-control" id="txtHoTen">
+
+                            </div>
+                            <small id="txtHoTen">*</small>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-4">
+                                <label for="">Số Điện Thoại</label>
+
+                            </div>
+                            <div class="col-8">
+                                <input type="text" class="form-control" id="txtSDT">
+
+                            </div>
+                            <small id="txtSDT">*</small>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-4">
+                                <label for="">Ngày Sinh</label>
+
+                            </div>
+                            <div class="col-8">
+                                <input type="date" class="form-control" id="txtNgaySinh">
+
+                            </div>
+                            <small id="txtNgaySinh">*</small>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-4">
+                                <label for="">Dia Chi</label>
+
+                            </div>
+                            <div class="col-8">
+                                <input type="text" class="form-control" id="txtDiaChi">
+
+                            </div>
+                            <small id="txtDiaChi">*</small>
+                        </div>
+                        <!-- <div class="row mt-3">
+                            <div class="col-4">
+                                <label for="">Bạn muốn tham gia khóa nào</label>
+                            </div>
+                            <div class="col-8">
+                                <select name="" id="selectKhoaHoc" class="">
+                                    <option value="1">Khóa 1 tuần</option>
+                                    <option value="2">Khóa 2 tuần</option>
+                                    <option value="3">Khóa 3 tuần</option>
+                                </select>
+                            </div>
+                        </div> -->
+                        <!-- <div class="row mt-3">
+                            <div class="col-4">
+                                <label for="">Giới Tính</label>
+
+                            </div>
+                            <div class="col-8">
+                                <input type="radio" name="gioitinh" id="txtNam" value="Nam">Nam
+                                <input type="radio" name="gioitinh" id="txtNu" value="Nu">Nữ
+                            </div>
+                            <small id="txtGioiTinh">*</small>
+                        </div> -->
+                        <div class="row mt-3">
+                            <div class="col-4">
+                                <label for="">Email</label>
+
+                            </div>
+                            <div class="col-8">
+                                <input type="email" class="form-control" id="txtEmail">
+
+                            </div>
+                            <small id="txtEmail">*</small>
+                        </div>
+                      
+
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-success form-control" data-dismiss="modal" id="luu" onclick="show()" type="button">Luu</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../Bootstrap (1)/js/jquery-3.7.1.min.js"></script>
+    <script src="../Bootstrap (1)/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../Bootstrap (1)/css/bootstrap.min.css">
+    <style>
+        .error-message {
+            color: red;
+            font-size: 16px;
+            margin-top: 4px;
+            display: block;
+        }
+
+        #nhapMuavao,
+        #nhapBanra {
+            color: magenta;
+            font-size: 16px;
+            margin-top: 4px;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container" style="background-color: white;">
+        <header>
+            <img src="../Image/Bai2/z5294787953344_676ab9a156da395dd47a7a6485e45443.jpg" width="100%" alt="">
+        </header>
+
+        <div class="row">
+            <div class="col-3 m-0 p-0">
+                <table class="table table-bordered m-0 ">
+                    <tr class="table-active text-center title ">
+                        <td colspan="2" style="color: blue;">Bảng tin thị trường</td>
+                    </tr>
+                    <tr class="table-active text-primary text-center">
+                        <td colspan="2">Vàng</td>
+                    </tr>
+                    <tr class="text-primary text-center">
+                        <td>Mua vào</td>
+                        <td>Bán ra</td>
+                    </tr>
+                    <tr class="text-center ">
+                        <td id="vangmv" style="height: 40px;"></td>
+                        <td id="vangbr"></td>
+                    </tr>
+                    <tr class="table-active text-primary text-center">
+                        <td colspan="2">USD</td>
+                    </tr>
+                    <tr class=" text-center">
+                        <td id="usdmv" style="height: 40px;"></td>
+                        <td id="usdbr"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-5 m-0 p-0 table-responsive-sm">
+                <table class="table table-secondary table-bordered" id="t1">
+                    <tr class=" text-center title">
+                        <td colspan="2" style="color: blue;">Cập nhật giá cả thị trường</td>
+                    </tr>
+                    <tr>
+                        <td>Mua vào</td>
+                        <td><input type="text" id="muavao" oninput="checkMua()">
+                            <span id="nhapMuavao" class="error-message"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Bán ra</td>
+                        <td><input type="text" id="banra" oninput="checkMua()">
+                            <span id="nhapBanra" class="error-message"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Loại xe</td>
+                        <td>
+                            <select name="loaixe" id="loaixe">
+                                <option value="Toyota">Toyota</option>
+                                <option value="KiA">KiA</option>
+                                <option value="Ford">Ford</option>
+                                <option value="Civic">Civic</option>
+                                <option value="Ferrari">Ferrari</option>
+                                <option value="Mercedes">Mercedes</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="radio" name="tiente" value="Vang" checked="checked" id="Vang">
+                            <label for="tiente">Vàng</label>
+                            <input type="radio" name="tiente" value="USD" id="USD">
+                            <label for="tiente">USD</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button id="updatebtn">Update</button>
+                            <button id="state">State</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-4 m-0 p-0 ">
+                <table class="table table-bordered m-0">
+                    <tr class="table-active text-center title border-2">
+                        <td style="color: blue;">Bảng báo giá</td>
+                    </tr>
+                    <tr class="text-primary">
+                        <td>
+                            <div id="infor">
+                                <!-- Details will be updated dynamically -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="table-active text-center">
+                        <td>
+                            <!-- Image will be updated dynamically -->
+                            <img src="" alt="Car" id="hinhxe" width="70%">
+                        </td>
+                    </tr>
+                    <tr class="text-success">
+                        <td>Giá:
+                            <span id="gia"></span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+<script>
+    $(document).ready(function () {
+        // Function to update information based on selected car
+        function updateCarInfo(carName) {
+            var carInfo = {
+                "Toyota": {
+                    "image": "../Image/Bai2/hinh2.jpg",
+                    "price": "35000",
+                    "details": ["-với kiểu dáng thể thao, sang trọng", "-nổi bật, ít tốn nhiên liệu", "-kiểu dáng thể thao"]
+                },
+                "KiA": {
+                    "image": "../Image/Bai2/hinh1.jpg",
+                    "price": "15000",
+                    "price": "35000",
+                    "details": ["-với kiểu dáng thể thao, sang trọng", "-nổi bật, ít tốn nhiên liệu", "-kiểu dáng thể thao"]
+                },
+                "Ford": {
+                    "image": "../Image/Bai2/hinh4.jpg",
+                    "price": "40000",
+                    "price": "35000",
+                    "details": ["-với kiểu dáng thể thao, sang trọng", "-nổi bật, ít tốn nhiên liệu", "-kiểu dáng thể thao"]
+                },
+                "Civic": {
+                    "image": "../Image/Bai2/hinh5.jpg",
+                    "price": "32000",
+                    "price": "35000",
+                    "details": ["-với kiểu dáng thể thao, sang trọng", "-nổi bật, ít tốn nhiên liệu", "-kiểu dáng thể thao"]
+                },
+                "Ferrari": {
+                    "image": "../Image/Bai2/hinh3.jpg",
+                    "price": "50000",
+                    "price": "35000",
+                    "details": ["-với kiểu dáng thể thao, sang trọng", "-nổi bật, ít tốn nhiên liệu", "-kiểu dáng thể thao"]
+                },
+                "Mercedes": {
+                    "image": "../Image/Bai2/hinh6.jpg",
+                    "price": "45000",
+                    "price": "35000",
+                    "details": ["-với kiểu dáng thể thao, sang trọng", "-nổi bật, ít tốn nhiên liệu", "-kiểu dáng thể thao"]
+                }
+            };
+
+            // Update image
+            document.getElementById("hinhxe").src = carInfo[carName].image;
+
+            // Update price
+            document.getElementById("gia").innerText = carInfo[carName].price;
+
+            // Update details
+            var detailsHtml = "";
+            carInfo[carName].details.forEach(function (detail) {
+                detailsHtml += "<p>" + detail + "</p>";
+            });
+            document.getElementById("infor").innerHTML = detailsHtml;
+        }
+
+        // Initially update car info based on default selected option
+        updateCarInfo(document.getElementById("loaixe").value);
+
+        // Update car info when select value changes
+        $("#loaixe").change(function () {
+            updateCarInfo(this.value);
+        });
+
+        // Update market table
+        $("#updatebtn").click(function () {
+            var txtmv = parseFloat(document.getElementById("muavao").value);
+            var txtbr = parseFloat(document.getElementById("banra").value);
+            var currency = $('[name="tiente"]:radio:checked').val();
+        
+            if (isNaN(txtmv) || txtmv < 0) {
+                // Hiển thị thông báo lỗi khi giá mua không hợp lệ
+                document.getElementById("nhapMuavao").textContent = "Vui lòng nhập giá mua hợp lệ";
+                return; // Dừng lại nếu giá mua không hợp lệ
+            } else {
+                document.getElementById("nhapMuavao").textContent = ""; // Xóa thông báo lỗi nếu giá mua hợp lệ
+            }
+        
+            if (isNaN(txtbr) || txtbr < 0) {
+                // Hiển thị thông báo lỗi khi giá bán không hợp lệ
+                document.getElementById("nhapBanra").textContent = "Vui lòng nhập giá bán hợp lệ";
+                return; // Dừng lại nếu giá bán không hợp lệ
+            } else {
+                document.getElementById("nhapBanra").textContent = ""; // Xóa thông báo lỗi nếu giá bán hợp lệ
+            }
+        
+            // Nếu cả hai giá mua và giá bán hợp lệ, thì cập nhật bảng thị trường
+            if (currency == 'Vang') {
+                document.getElementById("vangmv").innerText = txtmv;
+                document.getElementById("vangbr").innerText = txtbr;
+            } else {
+                document.getElementById("usdmv").innerText = txtmv;
+                document.getElementById("usdbr").innerText = txtbr;
+            }
+        });
+        
+    });
+
+    function checkMua() {
+        var txtmv = parseFloat(document.getElementById("muavao").value);
+        var txtbr = parseFloat(document.getElementById("banra").value);
+        var nhapMuavao = document.getElementById("nhapMuavao");
+        var nhapBanra = document.getElementById("nhapBanra");
+    
+        if (isNaN(txtmv) || txtmv < 0) {
+            nhapMuavao.textContent = "Vui lòng nhập giá mua hợp lệ";
+        } else {
+            nhapMuavao.textContent = "";
+        }
+    
+        if (isNaN(txtbr) || txtbr < 0) {
+            nhapBanra.textContent = "Vui lòng nhập giá bán hợp lệ";
+        } else {
+            nhapBanra.textContent = "";
+        }
+    }
+    
+    
+
+    function FormHoanThien() {
+        var txtmv = document.forms["myForm"]["muavao"].value;
+        var txtbr = document.forms["myForm"]["banra"].value;
+        var nhapMuavao = document.getElementById("nhapMuavao");
+        var nhapBanra = document.getElementById("nhapBanra");
+
+
+        if(!checkMua()){
+            return false;
+        }
+    }
+</script>
+
+</html>

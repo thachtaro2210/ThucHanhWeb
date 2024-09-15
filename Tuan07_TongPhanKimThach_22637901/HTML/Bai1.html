@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .image-container {
+            border-collapse: collapse;
+            /* Loại bỏ khoảng trống giữa các ô */
+            border: 2px solid black;
+            /* Viền đen cho container */
+        }
+
+        .image-container td {
+            padding: 50px;
+            /* Khoảng cách giữa các ô */
+            border: 2px solid black;
+            /* Viền đen cho từng ô */
+        }
+
+        .image-container img {
+            width: 100%;
+            /* Ảnh chiếm toàn bộ độ rộng của ô */
+            height: auto;
+            /* Tự động tính chiều cao để giữ tỷ lệ */
+            display: block;
+            /* Loại bỏ khoảng trống dưới ảnh */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <p><strong>Animal Gallery</strong></p>
+        </div>
+        <table class="image-container">
+            <tr>
+                <td><img src="../Image/Bai1/z5294768732948_9bed45e29a225b930b54d145be99337f.jpg" alt="Ảnh 1"></td>
+                <td><img src="../Image/Bai1/z5294768735739_e581ebe3cd4da03efe9c7c26807ce956.jpg" alt="Ảnh 2"></td>
+                <td><img src="../Image/Bai1/z5294768735740_60fdb73b36c8513ff1500d25e4d8fcee.jpg" alt="Ảnh 3"></td>
+            </tr>
+            <tr>
+                <td><img src="../Image/Bai1/z5294768741480_e89016c06dce87315e08a8e16771e5fc.jpg" alt="Ảnh 4"></td>
+                <td><img src="../Image/Bai1/z5294768745695_422ca0ad65cd355ae8be05eb451a8dd6.jpg" alt="Ảnh 5"></td>
+                <td><img src="../Image/Bai1/z5294768745696_79a094912bb1d73bc1257400129c9ab1.jpg" alt="Ảnh 6"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

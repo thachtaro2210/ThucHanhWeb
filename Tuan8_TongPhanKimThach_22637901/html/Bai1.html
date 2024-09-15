@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký Tài Khoản</title>
+    <link rel="stylesheet" href="../bootstrap-5.2.3-dist/bootstrap-5.2.3-dist/css/bootstrap.min.css">
+    <script src="../bootstrap-5.2.3-dist/JQuery/jquery-3.6.0.min.js"></script>
+    <script src="../bootstrap-5.2.3-dist/bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .input-error-message {
+            display: none;
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="registrationForm" action="">
+            <div class="row">
+                <h1 class="text-center">Đăng ký Tài Khoản</h1>
+                <div class="col-md-6">
+                    <label for="usn" class="form-label">Tên Đăng Nhập:</label>
+                    <input type="text" class="form-control" id="usn" name="usn" placeholder="Nhập tên đăng nhập">
+                    <span id="usnError" class="input-error-message"></span>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="pwd" class="form-label">Mật Khẩu:</label>
+                    <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Nhập mật khẩu">
+                    <span id="pwdError" class="input-error-message"></span>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="repwd" class="form-label">Nhập Lại Mật Khẩu:</label>
+                    <input type="password" class="form-control" id="repwd" name="repwd" placeholder="Nhập lại mật khẩu">
+                    <span id="repasswordError" class="input-error-message"></span>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <h1 class="text-center">Thông Tin cá nhân</h1>
+                <br>
+                <div class="col-md-6">
+                     <label for="tt" class="form-label">Họ Và Tên:</label>
+                     <input type="text"  class="form-control"  name="tt" id="tt" placeholder="Nhập họ và tên">
+                     <span id="nameError" class="input-error-message"></span>
+                     <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="ns" class="form-label">Ngày Sinh:</label>
+                    <input type="date" class="form-control" id="ns" name="ns" placeholder="Nhập ngày sinh">
+                    <span id="dobError" class="input-error-message"></span>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="gt" class="form-label">Giới Tính:</label>
+                    <select class="form-select" id="gt" name="gt">
+                        <option value="Nam">Nam</option>
+                        <option value="Nữ">Nữ</option>
+                        <option value="Khác">Khác</option>
+                    </select>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="dc" class="form-label">Địa Chỉ:</label>
+                    <input type="text" class="form-control" id="dc" name="dc" placeholder="Nhập địa chỉ">
+                    <span id="addressError" class="input-error-message"></span>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="sdt" class="form-label">Số Điện Thoại:</label>
+                    <input type="text" class="form-control" id="sdt" name="sdt" placeholder="Nhập số điện thoại">
+                    <span id="phoneError" class="input-error-message"></span>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Nhập email">
+                    <span id="emailError" class="input-error-message"></span>
+                    <hr>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Đăng Ký</button>
+        </form>
+    </div>
+    <script>
+        $(document).ready(function(){
+            // Sự kiện focus để kiểm tra khi nào ô nhập được focus
+            $("input").focus(function(){
+                var errorMessageId = "#" + $(this).attr("id") + "Error";
+                // Kiểm tra xem giá trị của ô nhập có trống không
+                if($(this).val() === ""){
+                    // Nếu trống, hiển thị thông báo lỗi
+                    $(errorMessageId).html("Vui lòng nhập thông tin");
+                    $(errorMessageId).show();
+                } else {
+                    // Nếu không trống, ẩn thông báo lỗi
+                    $(errorMessageId).hide();
+                }
+            });
+
+            // Sự kiện submit để kiểm tra khi nào form được submit
+            $("#registrationForm").submit(function(event){
+                var isValid = true;
+
+                // Lấy giá trị các ô nhập
+                var usn = $("#usn").val();
+                var pwd = $("#pwd").val();
+                var repwd = $("#repwd").val();
+                var tt = $("#tt").val();
+                var ns = $("#ns").val();
+                var dc = $("#dc").val();
+                var sdt = $("#sdt").val();
+                var email = $("#email").val();
+
+                // Kiểm tra tên đăng nhập
+                if(!/^[a-zA-Z][a-zA-Z0-9_]{5,}$/.test(usn)){
+                    $("#usnError").html("Tên đăng nhập không hợp lệ");
+                    $("#usnError").show();
+                    isValid = false;
+                } else {
+                    $("#usnError").hide();
+                }
+
+                // Kiểm tra mật khẩu
+                if(!/(?=.*\d)(?=.*[A-Z])(?=.*\W).{8,}/.test(pwd)){
+                    $("#pwdError").html("Mật khẩu không hợp lệ");
+                    $("#pwdError").show();
+                    isValid = false;
+                } else {
+                    $("#pwdError").hide();
+                }
+
+                // Kiểm tra nhập lại mật khẩu
+                if(pwd !== repwd){
+                    $("#repasswordError").html("Mật khẩu không khớp");
+                    $("#repasswordError").show();
+                    isValid = false;
+                } else {
+                    $("#repasswordError").hide();
+                }
+
+                // Kiểm tra họ và tên
+                if(!/^([A-Z][a-z]+\s?){2,}$/.test(tt)){
+                    $("#nameError").html("Họ và tên không hợp lệ");
+                    $("#nameError").show();
+                    isValid = false;
+                } else {
+                    $("#nameError").hide();
+                }
+
+                // Kiểm tra ngày sinh
+                var today = new Date();
+                var birthDate = new Date(ns);
+                var age = today.getFullYear() - birthDate.getFullYear();
+                var m = today.getMonth() - birthDate.getMonth();
+                if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                    age--;
+                }
+                if(age < 16){
+                    $("#dobError").html("Bạn phải trên 16 tuổi");
+                    $("#dobError").show();
+                    isValid = false;
+                } else {
+                    $("#dobError").hide();
+                }
+
+                // Kiểm tra địa chỉ
+                if(dc.trim() === ""){
+                    $("#addressError").html("Vui lòng nhập địa chỉ");
+                    $("#addressError").show();
+                    isValid = false;
+                } else {
+                    $("#addressError").hide();
+                }
+
+                // Kiểm tra số điện thoại
+                if(!/(09|03|07|06|05|04)+([0-9]{8})\b/.test(sdt)){
+                    $("#phoneError").html("Số điện thoại không hợp lệ");
+                    $("#phoneError").show();
+                    isValid = false;
+                } else {
+                    $("#phoneError").hide();
+                }
+
+                // Kiểm tra email
+                if(!/\S+@\S+\.\S+/.test(email)){
+                    $("#emailError").html("Email không hợp lệ");
+                    $("#emailError").show();
+                    isValid = false;
+                } else {
+                    $("#emailError").hide();
+                }
+
+                // Nếu có bất kỳ ô nhập nào không hợp lệ, ngăn chặn việc submit form
+                if(!isValid){
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

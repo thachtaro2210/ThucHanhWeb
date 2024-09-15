@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <script src="../jquery 3.7.1.js"></script>
+  <script src="../js/bootstrap.bundle.min.js"></script>
+
+  <style>
+    a {
+        color: white !important;   
+    }
+    
+    .container {
+        padding: 0;
+        width: 740px;
+    }
+    
+    .nav-item {
+        display: block;
+        width: 100%;
+    }
+
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    ul {
+        width: 100%;
+    }
+
+  </style>
+</head>
+<body>
+
+    <div class="container">
+        <ul class="nav bg-dark p-2 navbar-light">
+            <li>
+                <form class="form-inline">
+                    <input type="text" placeholder="Search" class="form-control mr-2">
+                    <button type="button" class="form-control">Search</button>
+                </form>
+            </li>
+            <li class="ml-auto"><span class="navbar-toggler-icon" data-toggle="collapse" data-target="#mobi"></span></li>
+            <ul class="collapse" id="mobi">
+                <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="collapse" data-target="#product-menu">Products</a>
+                </li>
+                <li class="collapse" id = "product-menu">
+                    <a href="#" class="dropdown-item">Engineering</a>
+                    <a href="#" class="dropdown-item">Telecom</a>
+                    <a href="#" class="dropdown-item">Energy</a>
+                    <a href="#" class="dropdown-item">Finance</a>
+                    <a href="#" class="dropdown-item">Consultancy</a>
+                </li>
+                <li class="nav-item"><a href="#" class="nav-link">Service</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contacts</a></li>
+            </ul>
+        </ul>
+    </div>
+    
+</body>
+</html>

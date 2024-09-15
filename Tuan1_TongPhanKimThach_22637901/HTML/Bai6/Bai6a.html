@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../fonts/fontawesome-free-6.4.2-web/fontawesome-free-6.4.2-web/css/all.css">
+    <title>bai 6a</title>
+</head>
+<body>
+    <div class="main">
+        <div class="heading-text">
+            <i class="fa-solid fa-bolt-lightning"></i>     
+            Jackson
+            <span></span>
+            Electionics
+        </div>
+        <div class="body">
+            <div class="body-text"> <br>
+                <h1>Registration Form</h1><br>
+                <p>Register your Jackson Electronics product here</p>
+            </div>
+            <div class="content">
+                <!-- first name -->
+                <label for="first-name" class="width_200">First Name</label>
+                <input type="text" name="first-name" id="first-name" class="gird_20p">
+
+                <!-- last name -->
+                <label for="last-name">Last Name:</label>
+                <input type="text" name="last-name" id="last-name" class="gird_20p block"> <br>
+
+                <!-- address 1 -->
+                <label for="address1" class="width_200">Address #1:</label>
+                <input type="text" name="address1" id="address1" class="gird_35p"> <br>
+                
+                <!-- address 2 -->
+                <label for="address2" class="width_200">Address #2:</label>
+                <input type="text" name="address2" id="address2" class="gird_35p"> <br>
+                
+                <!-- city -->
+                <label for="city" class="width_200">City:</label>
+                <input type="text" name="city" id="city" class="gird_25p">
+                
+                <!-- state -->
+                <label for="state">State:</label>
+                <input type="text" name="state" id="state" class="gird_5p">
+                
+                <!-- zip -->
+                <label for="zip">Zip:</label>
+                <input type="text" name="zip" id="zip" class="gird_10p"> <br>
+                
+                <!-- country -->
+                <label for="country" class="width_200">Country:</label>
+                <input type="text" placeholder="UnitedMaster" class="gird_25p">
+                <div class="line"></div>
+                <!-- product -->
+                <label for="product" class="width_200">Product:</label>
+                <select name="Product" id="product">
+                    <option value="1">ScanMaster</option>
+                    <option value="2">ScanMaster II</option>
+                    <option value="3">LaserPrint 1000</option>
+                    <option value="4">LaserPrint 5000</option>
+                    <option value="5">Print/scan 150</option>
+                </select> <br>
+
+                <!-- date purchsed -->
+                <label for="date-pruchased" class="width_200">Date Purchased:</label>
+                <input type="text" id="date-pruchased">
+
+                <!-- serial -->
+                <label for="serial" class="width_200">Serial#:</label>
+                <input type="text" id="serial">
+
+                <!-- used for -->
+                <div class="used-for">
+                    <label for="used-for" class="width_200">Used for:</label>
+                    <form style="margin-left: 202px;">
+                        <input type="radio" name="used-for" id="home">
+                        <label for="home">Home</label>
+
+                        <input type="radio" name="used-for" id="education">
+                        <label for="education">Educational Insitution</label> <br>
+                    
+                        <input type="radio" name="used-for" id="business">
+                        <label for="business">Business</label> 
+
+                        <input type="radio" name="used-for" id="orther">
+                        <label for="orther">Other</label> <br>
+
+                        <input type="radio" name="used-for" id="govemment">
+                        <label for="govemment">Govemment</label>
+                    </form>
+                </div>
+
+                <!-- system -->
+                <div class="system" >
+                    <label for="">System (check all that apply):</label>
+                    <div class="system-option" style="margin-left: 202px;">
+                        <input type="checkbox" name="system" id="windows">
+                        <label for="windows">Windows</label>
+
+                        <input type="checkbox" name="system" id="unix">
+                        <label for="unix">UNIX</label> <br>
+
+                        <input type="checkbox" name="system" id="macintosh">
+                        <label for="macintosh">Macintosh</label>
+
+                        <input type="checkbox" name="system" id="other">
+                        <label for="other">Other</label>
+                    </div>
+                </div>
+                <div class="line"></div>
+
+                <!-- comment -->
+                <div class="comment">
+                    <label for="comments">Comments?:</label>
+                    <textarea name="comments" id="comments" cols="50" rows="6"></textarea> <br>
+                </div>
+
+                <!-- buttons -->
+                <div class="btn">
+                    <input type="submit" value="click to register" class="btn">
+                    <input type="submit" value="click to cancel" class="btn">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    .gird_full_width {
+        width: 100%;
+    }
+    .gird_second_width {
+        width: 50%;
+    }
+    .gird_third_width {
+        width: 33.33%;
+    }
+    .gird_5p {
+        width: 5%;
+    }
+    .gird_10p {
+        width: 10%;
+    }
+    .gird_15p {
+        width: 15%;
+    }
+    .gird_20p{
+        width: 20%;
+    }
+    .gird_25p {
+        width: 25%;
+    }
+    .gird_30p {
+        width: 30%;
+    }
+    .gird_35p {
+        width: 35%;
+    }
+    .inline_block {
+        display: inline-block;
+    }
+    .heading-text{
+        text-align: center;
+        font-size: 24px;
+        font-weight: 500;
+        background-color: rgb(6, 193, 181);
+        width: 200px;
+        border-radius: 12px;
+        margin: auto;
+        box-shadow: 6px 6px 2px rgb(177, 177, 177);
+        position: relative;
+        border: 1px solid whitesmoke;
+    }
+    .heading-text i {
+        position: absolute;
+        left: 8px;
+    }
+    .heading-text span {
+        display: block;
+        content: "";
+        border-bottom: 3px solid white;
+    }
+    html {
+        color: white;
+        background-color: rgb(64,99,135);
+    }
+    .textarea {
+        width: 100%;
+    }
+    * {
+        border: 0;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .width_200 {
+        display: inline-block;
+        width: 200px;
+    }
+    .main {
+        width: 550px;
+        margin: auto;
+    }
+    .body-text {
+        width: 100%;
+        text-align: center;
+    }
+    .line {
+        display: block;
+        content: "";
+        width: 100%;
+        height: 2px;
+        background-color: white;
+        margin: 8px 0;
+    }
+    .used-option {
+        display: inline-block;
+    }
+    textarea {
+        right: 0;
+    }
+    .comment {
+        position: relative;
+    }
+    .comment>textarea {
+        position: absolute;
+        right: 0;
+    }
+    .btn {
+        text-align: center;
+        margin: 42px 4px 12px 4px;
+        padding: 4px;
+        border-radius: 3px;
+    }
+    input {
+        border-radius: 2px;
+    }
+
+    .used-for label,
+    .system label {
+        display: inline-block;
+        width: 150px;
+    }
+</style>
+</html>

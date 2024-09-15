@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/Bai1/Bai1.css">
+    <title>Vung bien yeu thuong</title>
+</head>
+<body>
+    <header>
+        <ul>
+            <li>Home</li>
+            <li>Products</li>
+            <li>Services</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+
+        <h1>Sky world</h1>
+    </header>
+    <div class="container">
+        <div class="content">
+            <h1>Registration infomation</h1>
+            <p>Start your travel planning now with our on-line tour regstration
+                form. Just tell us a little about yourself and your group and one of our travel
+                experts will contact  you  to create the perfect custom built for your group's needs .</p>
+            
+            
+            <form action="" class="content-input">
+                <div class="input-item">
+                    <label class="input-label" for="title">Title</label>
+                    <select name="" id="title" class="input-box">
+                        <option value="1">Mr</option>
+                        <option value="2">Miss</option>
+                    </select>
+                </div>
+
+                <div class="input-item">
+                    <label class="input-label" for="full-name">Full Name</label>
+                    <input class="input-box" type="text" placeholder="Full Name">
+                </div>
+
+                <div class="input-item">
+                    <label class="input-label" for="address">Mailing Address</label>
+                    <input class="input-box" type="text" name="" id="address" placeholder="Mailing Address">
+                </div>
+
+                <div class="input-item" class="input-box">
+                    <label class="input-label" for="city">City</label>
+                    <input class="input-box" type="text" placeholder="Country">
+                </div>
+
+                <div class="input-item orther">
+                    <label class="input-label orther-text" for="orther">Specific questions or requests about your tour</label>
+                    <textarea name="" id="orther" cols="30" rows="6" class="input-box"></textarea>
+                </div>
+
+                <div class="btns">
+                    <input type="submit" class="btn">
+                    <input type="reset"  class="btn">
+                </div>
+            </form>
+        </div>
+
+        <div class="right">
+            <img src="../Image/Bai1/sky.png" alt="sky">
+            <div class="right-text">
+                <h1>You've arrived</h1>
+                <span>Journeys as great as the destiations</span>
+            </div>
+        </div>
+    </div>
+    <footer>
+        &copy;2016 Sky World Tours. All rights reserved <br>
+        Contact infomation: <b>Student Name | Student ID | Testing date: 16 Sept 2016</b>
+    </footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+</body>
+<Script>
+    var a = document.querySelector('input');
+
+    var regex = /^[A-Z]+([\s]?[A-Za-z])*$/;
+    var regex = /^[\w!@#$%^&*()-_=+]{8,20}$/;
+    var regex = /^0{1}(\+84. )?[\d]{9}$/;
+    var regex = /^[\w]+(\.{1}[\w]+)*.@[A-Za-z]+(\.[a-zA-z]{2,})*$/
+    a.addEventListener('keypress', function(){
+        if (event.key == 'Enter'){
+            if (regex.test(a.value)){
+                console.log('oke');
+            } else {
+                console.log('sai');
+            }
+        }
+    })
+</Script>
+</html>

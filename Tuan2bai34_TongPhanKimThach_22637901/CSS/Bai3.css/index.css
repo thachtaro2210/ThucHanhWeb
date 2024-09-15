@@ -1,0 +1,10 @@
+*{
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+body{
+    background-image: url(../Bai3/img/background.jpg);
+}
+.salogo{
+    text-align: center;
+}

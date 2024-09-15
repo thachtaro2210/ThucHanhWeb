@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang Web</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Định dạng CSS tùy chỉnh của bạn */
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <a class="navbar-brand" href="#">Trang Web</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#" data-toggle="modal" data-target="#myModal">Đăng ký</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container mt-3">
+  <!-- Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Đăng ký</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal Body -->
+        <div class="modal-body">
+          <!-- Form -->
+          <form id="registrationForm">
+            <div class="form-group">
+              <label for="stt">STT:</label>
+              <input type="text" class="form-control" id="stt" name="stt">
+            </div>
+            <div class="form-group">
+              <label for="name">Họ và tên:</label>
+              <input type="text" class="form-control" id="name" name="name">
+            </div>
+            <div class="form-group">
+              <label for="shirtNumber">Số áo:</label>
+              <input type="text" class="form-control" id="shirtNumber" name="shirtNumber">
+            </div>
+            <div class="form-group">
+              <label for="club">Câu lạc bộ:</label>
+              <input type="text" class="form-control" id="club" name="club">
+            </div>
+            <div class="form-group">
+              <label for="date">Ngày tập trung:</label>
+              <input type="date" class="form-control" id="date" name="date">
+            </div>
+            <div class="form-group">
+              <label for="phone">Điện thoại:</label>
+              <input type="tel" class="form-control" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+              <label for="avatar">Ảnh đại diện:</label>
+              <input type="file" class="form-control-file" id="avatar" name="avatar">
+            </div>
+            <button type="submit" class="btn btn-primary">Đăng ký</button>
+          </form>
+          <!-- End Form -->
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Thông tin đăng ký -->
+  <div id="registrationInfo"></div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  $(document).ready(function(){
+    // Xử lý khi form được submit
+    $('#registrationForm').submit(function(event){
+      // Lấy giá trị từ các trường input
+      var stt = $('#stt').val();
+      var name = $('#name').val();
+      var shirtNumber = $('#shirtNumber').val();
+      var club = $('#club').val();
+      var date = $('#date').val();
+      var phone = $('#phone').val();
+      var avatar = $('#avatar').val();
+
+      // Hiển thị thông tin trên màn hình
+      var registrationInfo = $('#registrationInfo');
+      registrationInfo.html(
+        '<p>STT: ' + stt + '</p>' +
+        '<p>Họ và tên: ' + name + '</p>' +
+        '<p>Số áo: ' + shirtNumber + '</p>' +
+        '<p>Câu lạc bộ: ' + club + '</p>' +
+        '<p>Ngày tập trung: ' + date + '</p>' +
+        '<p>Điện thoại: ' + phone + '</p>'
+      );
+
+      // Ngăn chặn form gửi đi
+      event.preventDefault();
+    });
+  });
+</script>
+</body>
+</html>

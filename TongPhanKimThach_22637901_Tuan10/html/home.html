@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dang ky tour du lich</title>
+    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
+    <script src="../bootstrap/jquery-3.6.0.min.js"></script>
+    <script src="../bootstrap/bootstrap.min.js"></script>
+    <script src="../bootstrap/popper.min.js"></script>
+    <script src="../js/file.js"></script>
+    <style>
+        .custom-btn {
+            width: 100% !important ;
+        }
+    </style>
+    
+</head>
+<body>
+    <!-- thiet ke layout -->
+    <div class="container">
+        <div class="col-md-12">
+            <header>
+                <img src="../IMG/banner-5.png" style="width: 1200px; height: 300px;">
+            </header>
+        </div>
+    
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1">
+                    <nav class="navbar-collapse">
+                        <ul class="navbar-nav nav">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link" style="color: blue;">Đăng nhập</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-md-2">
+                    <nav class="navbar-collapse">
+                        <ul class="navbar-nav nav">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link" id="myBtn" style="color: blue;">Mở tour mới</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        
+        
+
+        <div class="col-md-12">
+            <section class="table-responsive">
+                <table class="table table-striped">
+                    <caption>
+                        <h4 style="text-align: center;">DANH SÁCH TOUR - DU LỊCH VIỆT</h4>
+                    </caption>
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Mã Tour</th>
+                            <th>hành trình</th>
+                            <th>Ngày khởi hành</th>
+                            <th>Thời gian</th>
+                            <th>Giá tour</th>
+                            <th>Ảnh đại diện</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+            </div>
+            <div class="col-md-12">
+                <footer align="center">
+                    Hoten: TongPhanKimThach - MSSV: 22637901 Lớp:DHKTPM18A
+                </footer>
+            </div>
+    </div>
+
+    <!-- thiet ke model -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    
+                    <h1 style="text-align:center;">THÔNG TIN TOUR</h1>
+                    <button type="button" class="close" data-dismiss="modal">X</button>
+                </div>
+                <div class="modal-body">
+                    <form role="form" class="form-horizontal">
+                        <div class="form-group">
+                            <div id="thongbao" class="text-danger" style="text-align: center;"></div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                       <label for="txtMa" class="control-label col-xs-12 col-md-3 ">Mã tour</label>
+                    
+                        <div class="col-xs-12 col-md-9 ">
+                          <input type="text" class="form-control" value="HNI-HCM-12-2018" id="txtMa" placeholder="Nhập theo mẫu: XXX-XXX-năm-yyyy">
+                           <span id="tbMa" class="text-danger">*</span>
+                       </div>
+                          </div>
+                             </div>
+                
+
+
+                             <div class="form-group">
+                                <div class="row">
+                                    <label for="txtDiemDen" class="control-label col-xs-12 col-md-3">Hành trình</label>
+                                    <div class="col-xs-12 col-md-9">
+                                        <input type="text" class="form-control" id="txtDiemDen" placeholder="Nhập hành trình">
+                                        <span id="tbDiemDen" class="text-danger">*</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+
+        <div class="form-group">
+            <div class="row">
+            <label for="txtNgay" class="control-label  col-xs-12 col-md-3">Ngày khởi hành</label>
+            <div class="col-xs-12 col-md-9">
+                <input type="date" class="form-control" id="txtNgay">
+                <span id="tbNgay" class="text-danger">*</span>
+            </div>
+        </div>
+    </div>
+
+        <div class="form-group">
+              <div class="row">
+            <label for="txtTG" class="control-label col-xs-12 col-md-3">Thời gian</label>
+            <div class="col-xs-12 col-md-9">
+                <input type="text" class="form-control " id="txtTG" placeholder="Nhập thời gian đi (4 ngày 3 đêm)">
+                <span id="tbTG" class="text-danger">*</span>
+            </div>
+        </div>
+    </div>
+
+        <div class="form-group">
+            <div class="row">
+            <label for="txtGia" class="control-label col-xs-12 col-md-3">Giá Tour</label>
+            <div class="col-xs-12 col-md-9">
+                <input type="text" class="form-control" id="txtGia" placeholder="Số > 0">
+                <span id="tbGia" class="text-danger">*</span>
+            </div>
+        </div>
+    </div>
+
+        <div class="form-group">
+            <div class="row">
+            <label for="txtAnh" class="control-label col-xs-12 col-md-3">Ảnh đại diện</label>
+            <div class="col-xs-12 col-md-9">
+                <input type="file" class="form-control" id="txtAnh" accept=".jpg, .jpeg, .png">
+                <span id="tbFile" class="text-danger">*</span>
+            </div>
+        </div>
+              </div>
+
+        </form>
+        <div class="modal-footer">
+            <div class="row">
+                <div class="col-xs-12">
+                    <button type="button" id="btnSave" class="btn btn-success btn-block custom-btn " style="width: 300;">Lưu</button>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        </div>
+        </div>
+        </div>
+       </body>
+       </html>

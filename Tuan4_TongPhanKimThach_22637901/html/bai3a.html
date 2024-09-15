@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai 3a</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <style>
+        .main {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.1);
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        .icon-close {
+            position: relative;
+            top: -12px;
+            font-size: 32px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="container bg-light p-4">
+            <div class="row border-bottom mb-3 pb-2">
+                <h3>Login</h3>
+                <span class="ml-auto icon-close">&times;</span>
+            </div>
+            <div class="row pb-4 border-bottom">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" id="email" placeholder="Email">
+                <label for="pass"Password>Password</label>
+                <input type="text" class="form-control" id="pass" placeholder="Password">
+                <button class="btn btn-primary">Submit</button>
+            </div>
+            <div class="row">
+                <button class="btn btn-danger ml-auto mt-3">Close</button>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

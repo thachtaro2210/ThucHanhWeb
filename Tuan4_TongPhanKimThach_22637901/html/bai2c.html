@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai2c</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../jquery 3.7.1.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        .container {
+            margin-top: 12px;
+            width: 620px;
+            padding-top: 16px;
+        }
+
+        .form-item {
+            margin-bottom: 12px;
+        }
+
+        .form-item input[type="text"],
+        .form-item input[type="email"] {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container border border-primary">
+        <div class="row">
+            <div class="col-6">
+                <div class="form-item">
+                    <label for="">Username*</label> <br>
+                    <input type="text" placeholder="Choose your username">
+                </div>
+                <div class="form-item">
+                    <label for="">E-mail*</label> <br>
+                    <input type="email" placeholder="Your current email address">
+                </div>
+                <div class="form-item">
+                    <label for="">Password*</label> <br>
+                    <input type="text" placeholder="Create a password">
+                </div>
+                <div class="form-item">
+                    <label for="">Full name*</label> <br>
+                    <input type="text" placeholder="Your First name and Last name">
+                </div>
+                <div class="form-item">
+                    Gender* <br>
+                    <input type="radio" name="gender" id="male" > <label for="male">Male</label>
+                    <input type="radio" name="gender" id="female"> <label for="female">Female</label>
+                </div>
+            </div>
+    
+            <div class="col-6">
+                <div class="form-item">
+                    <label for="company-name">Company name*</label> <br>
+                    <input type="text" id="company-name" placeholder="Your company name">
+                </div>
+                <div class="form-item">
+                    <label for="category">Category*</label> <br>
+                    <input type="text" id="category" placeholder="Skills catagory">
+                </div>
+                <div class="form-item">
+                    <label for="number">Contact number*</label> <br>
+                    <input type="text" id="number" placeholder="Provide your number">
+                </div>
+                <div class="form-item">
+                    <label for="locate">Your location*</label> <br>
+                    <input type="text" id="locate" placeholder="Your Pincode and City">
+                </div>
+                <div class="form-item">
+                    <input type="checkbox" name="agree" id="agree"> 
+                    <label for="agree">Agree with the terms and conditions</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-end mb-4 mr-4">
+            <button class="btn btn-info">Signup</button>
+            <span class="p-2">or</span>
+            <button class="btn btn-primary">Sign Up with Facebook</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/allcss.css">
+    <link rel="stylesheet" href="../CSS/Bai1.css">
+    <title>Bai 1</title>
+</head>
+<body>
+    <div class="main">
+        <header>
+            <h1><i>EXAMPLE CAFE MENU</i></h1>
+            <nav>
+                <a href="#"><img src="../Image/icons8-home-50.png" alt=""></a>
+                <a href="#">Starter</a>
+                <a href="#">Main Courses</a>
+                <a href="#">Dessert</a>
+                <div class="nav_search">
+                    <input type="text" name="" id="">
+                    <input type="button" name="" id="" value="Go">
+                </div>
+            </nav>
+        </header>
+    
+        <div class="container">
+            <aside class="left-aside">
+                <div class="left-text">
+                    <a href="#">Cafe Latte</a>
+                    <a href="#">Capuchino</a>
+                    <a href="#">Ocean Blue</a>
+                    <a href="#">I ce-cream Cafe</a>
+                    <a href="#">Order Online</a>
+                </div>
+                <div class="left-photo">
+                    <img src="../Image/company.png" alt="">
+                </div>
+            </aside>
+        
+            <section>
+                <article>
+                    <h1>Starter</h1>
+                    <ul>
+                        <li>Chesnut and Mushroom Goujons<a href="#">(V)</a></li>
+                        <li>Goat Cheese<a href="#">(V)</a></li>
+                        <li class="orange">HONER SOY CHICKEN KEBABS<a href="#">(V)</a></li>
+                        <li>Seafood Salad<a href="#">(V)</a></li>
+                    </ul>
+                    <a href="#"><b>Back to Top</b></a>
+            
+                    <h1>Desserts</h1>
+                    <ul>
+                        <li>Lemon Sorbet<a href="#">(V)</a></li>
+                        <li>Chocolate Mud Pie<a href="#">(V)</a></li>
+                        <li>Pecan Pie<a href="#">(V)</a></li>
+                        <li>Selection of fine Cheeses from Around the World<a href="#">(V)</a></li>
+                    </ul>
+                    <a href="#"><b>Back to Top</b></a>
+                </article>
+                
+                <article class="info">
+                    <h1>INFORMATION</h1>
+                    <form action="">
+                        <input type="text" placeholder="First Name">
+                        <input type="text" placeholder="Last Name">
+                        <input type="email" placeholder="Email">
+                        <input type="text" placeholder="TelePhone">
+                        <select name="region" id="region">
+                            <option value="usa">USA</option>
+                            <option value="vn">Viet Nam</option>
+                            <option value="japan">Japan</option>
+                        </select>
+
+                        <input type="radio" name="foreign" id="vn">
+                        
+                        <label for="vn">Vietnamese</label>
+                        <input type="radio" name="foreign" id="foreign">
+                      <br>
+                        <label for="foreign">foreigner</label>
+<br>
+                        <textarea name="commemt" id="cmt" cols="80" rows="4" placeholder="Commemts"></textarea>
+                        <br>
+                        <input type="submit" value="submit">
+                        <input type="button" value="Cancel">
+                    </form>
+                </article>
+            </section>
+
+            <aside class="right-aside">
+                <h1>Events</h1>
+                <div class="right-space" id="meeting">
+                    <h3>Regular Meetings</h3>
+                    <img src="../Image/meeting.png" alt="">
+                    <p>Host your regular team meetings or activities in the comfort of your own private room. <a class="meeting-more">Read more...</a><span class="meeting-more-text hidden"> Charge up on Kith's aromatic coffee and delectable dishes for that extra boost in your work! </span> <a class="meeting-show-left hidden">Show left</a></p>
+                </div>
+                <div class="right-space">
+                    <h3>Product Launches</h3>
+                    <img src="../Image/launch.png" alt="">
+                    <p>Launch your product with ease in a space that truly fits its image. <a class="launch-more">Read more...</a> <span class="launch-more-text hidden">Create an unforgettable experience for your guests with our spacious outlets! Whether you want to host an intimate celebration or launch an event for hundreds of guests, Kith's space is customisable to your needs</span><a class="launch-show-left hidden">Show left</a></p>
+                </div>
+            </aside>
+        </div>
+        
+        <footer>
+            <em>ABC Company <sup>&copy;</sup> - 12345678 - abccoffee@gmail.com</em>
+        </footer>
+    </div>
+
+</body>
+</html>
+
+<script>
+    var meetingMore = document.querySelector(".meeting-more");    
+    var meetingText = document.querySelector(".meeting-more-text");
+    var meetingShowLeft = document.querySelector(".meeting-show-left");
+
+    var launchMore = document.querySelector(".launch-more");
+    var launchText = document.querySelector(".launch-more-text");
+    var launchShowLeft = document.querySelector(".launch-show-left");
+
+    function showText(more, text, hide) {
+        more.classList.add("hidden");
+        text.classList.remove("hidden");
+        hide.classList.remove("hidden");
+    }
+
+    function hideText(more, text, hide) {
+        more.classList.remove("hidden");
+        text.classList.add("hidden");
+        hide.classList.add("hidden");
+    }
+
+    meetingMore.addEventListener("click", function() {
+        showText(meetingMore, meetingText, meetingShowLeft);
+    })
+
+    meetingShowLeft.addEventListener("click", function() {
+        hideText(meetingMore, meetingText, meetingShowLeft);
+    })
+
+    launchMore.addEventListener("click", function() {
+        showText(launchMore, launchText, launchShowLeft);
+    })
+
+    launchShowLeft.addEventListener("click", function() {
+        hideText(launchMore, launchText, launchShowLeft);
+    })
+</script>

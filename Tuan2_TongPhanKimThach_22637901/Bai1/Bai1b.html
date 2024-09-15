@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/allcss.css">
+    <title>Bai 1</title>
+</head>
+<body>
+    <header>
+        <h1><i>EXAMPLE CAFE MENU</i></h1>
+        <nav>
+            <a href="#"><i class="fa-solid fa-house"></i></a>
+            <a href="#">Starter</a>
+            <a href="#">Main Courses</a>
+            <a href="#">Dessert</a>
+            <div class="nav_search">
+                <input type="text" name="" id="">
+                <input type="button" name="" id="" value="Go">
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <h1>Starter</h1>
+        <ul>
+            <li>Chesnut and Mushroom Goujons<a href="#">(V)</a></li>
+            <li>Goat Cheese<a href="#">(V)</a></li>
+            <li class="orange">HONER SOY CHICKEN KEBABS<a href="#">(V)</a></li>
+            <li>Seafood Salad<a href="#">(V)</a></li>
+        </ul>
+        <a href="#"><b>Back to Top</b></a>
+
+        <h1>Desserts</h1>
+        <ul>
+            <li>Lemon Sorbet<a href="#">(V)</a></li>
+            <li>Chocolate Mud Pie<a href="#">(V)</a></li>
+            <li>Pecan Pie<a href="#">(V)</a></li>
+            <li>Selection of fine Cheeses from Around the World<a href="#">(V)</a></li>
+        </ul>
+        <a href="#"><b>Back to Top</b></a>
+    </section>
+</body>
+</html>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html {
+        font-size: 62.5%;
+        --primary-color: #666;
+        --border-color: #ccc;
+        --white-color: white;
+        --h1-color: rgb(220, 20, 60);
+    }
+
+    .orange {
+        color: orange;
+    }
+
+/*--------------header------------------*/
+    header h1 {
+        text-align: center;
+        color: var(--h1-color);
+        text-shadow: 6px 16px 6px  rgba(220, 20, 60, 0.3);  
+        font-size: 2.8rem; 
+        font-weight: 300;
+    }
+
+    header nav {
+        border: 1px solid var(--border-color);
+        margin-top: 16px;
+    }
+    section a {
+        font-size: 1.4rem;
+    }
+
+    header a {
+        text-decoration: none;
+        color: var(--white-color);
+        padding: 8px 16px;
+        border-right: 1px solid var(--border-color);
+    }
+
+    header i {
+        margin-left: 64px;
+    }
+    .nav_search {
+        display: inline-block;
+        margin-left: 32px;
+    }
+
+    nav {
+        height: 48px;
+        line-height: 48px;
+        background-color: rgba(220, 20, 60, 0.4);
+        font-size: 1.6rem;
+    }
+/*----------------------------------------------------*/
+/*------------------section------------------------*/
+    section h1,
+    section a {
+        color: var(--h1-color);
+    }
+
+
+    section h1 {
+        background-color: beige;
+        font-size: 2.4rem;
+        font-weight: 600;
+    }
+
+    section ul {
+        margin-left: 32px;
+        font-size: 1.4rem;
+    }
+
+
+</style>

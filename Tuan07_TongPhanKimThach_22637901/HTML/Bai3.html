@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Đăng Ký</title>
+    <style>
+        table {
+            color: rgb(23, 85, 146);
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            background-color: antiquewhite;
+        }
+
+        th {
+            background-color: rgb(47, 255, 161);
+        }
+
+        #usernameError {
+            color: magenta;
+
+        }
+
+        #Password {
+            color: magenta;
+        }
+
+        #confirmPasswordError {
+            color: magenta;
+        }
+
+        .error-message {
+            display: block;
+            margin-top: 4px;
+        }
+
+        #fullnameError {
+            color: magenta;
+        }
+
+        #birthDateError {
+            color: magenta;
+        }
+
+        #phoneError {
+            color: magenta;
+        }
+        #DiaChiError{
+            color: magenta;
+        }
+        #EmailError{
+            color: magenta;
+        }
+    </style>
+</head>
+
+<body id="h1">
+
+    <form name="signupForm" onsubmit="return validateForm()" method="post">
+        <table>
+            <tr>
+                <th colspan="2">Form Đăng kí</th>
+            </tr>
+            <tr>
+                <th>Họ và Tên(*)</th>
+                <td><input type="text" name="fullname" required oninput="checkfullname()" value="takiTong">
+                    <span id="fullnameError" class="error-message"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>Tên đăng nhập(*)</th>
+                <td><input type="text" name="username" id="username" required minlength="6" oninput="checkUsername()"
+                        value="tika123456">
+
+                    <span id="usernameError" class="error-message"> </span>
+                </td>
+            </tr>
+            <tr>
+                <th>Mật khẩu(*)</th>
+                <td><input type="password" id="password" name="password" required minlength="8"
+                        oninput="checkPassword()" value="Thach22102004">
+                    <span id="Password" class="error-message"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>Xác nhận mật khẩu(*)</th>
+                <td><input type="password" id="confirm_password" name="confirm_password" required minlength="8"
+                        oninput="checkconfirm_Password()" value="Thach22102004">
+                    <span id="confirmPasswordError" class="error-message"></span>
+                </td>
+            </tr>
+
+            <th>Ngày Sinh</th>
+            <td>
+                <select name="birth_day" oninput="checkbirthday()">
+                    <option value="">Ngày</option>
+                    <!-- Thêm các lựa chọn ngày từ 1 đến 31 -->
+                    <script>
+                        for (var i = 1; i <= 31; i++) {
+                            document.write("<option value='" + i + "'>" + i + "</option>");
+                        }
+                    </script>
+                </select>
+                <select name="birth_month" oninput="checkbirthday()">
+                    <option value="">Tháng</option>
+                    <!-- Thêm các lựa chọn tháng từ 1 đến 12 -->
+                    <script>
+                        for (var i = 1; i <= 12; i++) {
+                            document.write("<option value='" + i + "'>" + i + "</option>");
+                        }
+                    </script>
+                </select>
+                <select name="birth_year" oninput="checkbirthday()">
+                    <option value="">Năm</option>
+                    <!-- Thêm các lựa chọn năm từ 1900 đến 2022 (hoặc năm hiện tại) -->
+                    <script>
+                        var currentYear = new Date().getFullYear();
+                        for (var i = 1900; i <= currentYear; i++) {
+                            document.write("<option value='" + i + "'>" + i + "</option>");
+                        }
+                    </script>
+                </select>
+
+                <span id="birthDateError" class="error-message"></span>
+            </td>
+            </tr>
+            <tr>
+                <th>Điện thoại*</th>
+                <td><input type="text" name="phone" id="phone" oninput="checkPhone()" value="0384589387">
+                    <span id="phoneError" class="error-message"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>Địa chỉ</th>
+                <td><input type="text" name="DiaChi" id="DiaChi" oninput="checkDiaChi()" value="04/NguyenVanBa0">
+                <span id="DiaChiError" class="error-message"></span></td>
+            </tr>
+            <tr>
+                <th>Email*</th>
+                <td><input type="email" name="email" id="Email"oninput="checkEmail()" value="tiak@gmail.com">
+                <span id="EmailError" class="error-message"></span></td>
+            </tr>
+            <tr>
+                <th>Sở thích</th>
+                <td>
+                    <select name="" id="">
+                        <option value="">Ca Nhac</option>
+                        <option value="">Da Banh</option>
+                        <option value="">Cau Long</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td><input type="submit" value="Đăng Ký">
+                    <input type="button" value="Hủy" onclick="clearForm()">
+                </td>
+            </tr>
+        </table>
+        <br>
+    </form>
+
+    <script>
+        function checkfullname() {
+            var fullnameInput = document.getElementsByName("fullname")[0].value;
+            var fullnameError = document.getElementById("fullnameError");
+            if (fullnameInput.trim() === "") {
+                fullnameError.textContent = "Họ và tên không được để trống.";
+            } else {
+                fullnameError.textContent = ""; // Xóa thông báo lỗi nếu hợp lệ
+            }
+        }
+
+
+        document.getElementById("fullname").oninput = checkfullname;
+
+
+
+        function checkUsername() {
+            var usernameInput = document.getElementById("username").value;
+            var usernameError = document.getElementById("usernameError");
+
+            if (usernameInput.length <= 0) {
+                usernameError.textContent = "Tên đăng nhập không được để trống.";
+            } else if (usernameInput.length < 6) {
+                usernameError.textContent = "Tên đăng nhập phải có ít nhất 6 ký tự.";
+            } else {
+                usernameError.textContent = ""; // Xóa thông báo lỗi nếu tên đăng nhập hợp lệ
+            }
+
+        }
+        document.getElementById("username").oninput = checkUsername;
+        function checkPassword() {
+            var passwordInput = document.getElementById("password").value;
+            var PasswordError = document.getElementById("Password");
+            var error = "";
+
+            // Kiểm tra xem người dùng đã nhập gì vào ô mật khẩu chưa
+            if (passwordInput.length <= 0) {
+                error = "Mật khẩu không được để trống.";
+            } else if (passwordInput.length < 8) {
+                error = "Mật khẩu phải có ít nhất 8 ký tự.";
+            } else {
+                // Kiểm tra mật khẩu theo regex
+                var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+                if (!passwordRegex.test(passwordInput)) {
+                    error = "Mật khẩu phải chứa ít nhất 1 chữ hoa, 1 chữ thường và 1 số.";
+                }
+            }
+
+            // Hiển thị thông báo lỗi nếu có
+            PasswordError.textContent = error;
+            return error === ""; // Trả về true nếu không có lỗi
+        }
+        function checkconfirm_Password() {
+            var passwordInput = document.getElementById("password").value;
+            var confirm_passwordInput = document.getElementById("confirm_password").value;
+            var confirmPasswordError = document.getElementById("confirmPasswordError");
+            if (confirm_passwordInput !== passwordInput) {
+                confirmPasswordError.textContent = "Mật khẩu không khớp.";
+            } else {
+                confirmPasswordError.textContent = ""; // Xóa thông báo lỗi nếu hợp lệ
+            }
+        }
+        function checkbirthday() {
+            var birth_day = parseInt(document.getElementsByName("birth_day")[0].value);
+            var birth_month = parseInt(document.getElementsByName("birth_month")[0].value);
+            var birth_year = parseInt(document.getElementsByName("birth_year")[0].value);
+            var selectedDate = new Date(birth_year, birth_month - 1, birth_day);
+            var currentDate = new Date();
+            var birthDateError = document.getElementById("birthDateError");
+            if (selectedDate > currentDate) {
+                birthDateError.textContent = "Ngày sinh không được lớn hơn ngày hiện tại( ngày sinh là ngày bé hơn Date).";
+                return false;
+            } else {
+                birthDateError.textContent = ""; // Xóa thông báo lỗi nếu hợp lệ
+                return true;
+            }
+        }
+
+        function checkPhone() {
+            var phoneInput = document.getElementById("phone").value;
+            var phoneError = document.getElementById("phoneError");
+
+            if (phoneInput.length <= 0) {
+                phoneError.textContent = "Sdt không được rỗng"; // Clear any previous error message
+            } else {
+                var phoneRegex = /^(03|09|08)/;
+
+                if (phoneRegex.test(phoneInput)) {
+                    phoneError.textContent = ""; // Clear any previous error message
+                } else {
+                    phoneError.textContent = "Số điện thoại không hợp lệ phải theo định dạng bắt đầu bằng 03,09,08"; // Display error message
+                }
+            }
+        }
+        function checkDiaChi(){
+            var DiaChiInput = document.getElementById("DiaChi").value;
+            var DiaChiError = document.getElementById("DiaChiError");
+
+            if(DiaChiInput.length <= 0){
+                DiaChiError.textContent = "Địa chỉ không được để trống"
+            }
+        }
+        function checkEmail(){
+            var EmailInput = document.getElementById("Email").value;
+            var EmailError = document.getElementById("EmailError");
+            if(EmailInput.length <= 0){
+                EmailError.textContent = "Email không được để trống"
+            } else{
+                var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+\.com$/;
+                if(emailRegex.test(EmailInput)){
+                    EmailError.textContent="";
+                }else{
+                    EmailError.textContent="Email không đúng định dạng là phải có @ và kết thúc bằng đuôi .com"
+                }
+            }
+        }
+
+
+        // Sử dụng sự kiện oninput để kiểm tra mật khẩu ngay khi người dùng nhập liệu
+        document.getElementById("password").oninput = checkPassword;
+
+
+        function validateForm() {
+            var fullname = document.forms["signupForm"]["fullname"].value;
+            var username = document.forms["signupForm"]["username"].value;
+            var password = document.forms["signupForm"]["password"].value;
+            var confirm_password = document.forms["signupForm"]["confirm_password"].value;
+            var phone = document.forms["signupForm"]["phone"].value;
+            var email = document.forms["signupForm"]["email"].value;
+
+            // Kiểm tra các trường bắt buộc
+            if (fullname == "" || username == "" || password == "" || confirm_password == "" || phone == "" || email == "") {
+                alert("Vui lòng điền đầy đủ thông tin.");
+                return false;
+            }
+            if (!checkUsername()) {
+                return false;
+            }
+            if (!checkbirthday()) {
+                return false;
+            }
+            if (!checkfullname()) {
+                return false;
+            }
+            if (!checkconfirm_Password()) {
+                return false;
+            }
+
+            // Kiểm tra mật khẩu
+            if (!checkPassword()) {
+                return false;
+            }
+            if (!checkPhone()) {
+                return false;
+            }
+            if(!checkDiaChi()){
+                return false;
+            }
+
+            // Kiểm tra định dạng email sử dụng regular expression
+            if(!checkEmail())
+            {
+
+                return false;
+            }
+
+            // Nếu dữ liệu hợp lệ, chuyển sang trang thông tin
+            window.location.href = "thongtin.htm";
+            return true;
+        }
+
+
+        function clearForm() {
+            document.getElementById("signupForm").reset();
+        }
+    </script>
+
+</body>
+
+</html>

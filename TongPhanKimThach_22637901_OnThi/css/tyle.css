@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.red {
+    color: red;
+}
+
+.container {
+    width: 960px;
+    margin: auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background: url(../img/nen_header.jpg);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-text h3 {
+    color: #cee2ea ;
+}
+
+.header-text h1 {
+    color: #f46e67
+}
+
+.header-right li {
+    display: inline-block;
+    margin: 0 0 12px 0;
+    padding: 0 4px;
+}
+
+.header-right .br {
+    border-right: 1px solid black;
+}
+
+.header-right input {
+    padding: 2px;
+    width: 90%;
+}
+
+/*~~~~ nav ~~~~*/
+.nav {
+    background-color: #eac54d;
+}
+
+.nav img {
+    position: relative;
+    height: 24px;
+    bottom: -6px;
+}
+
+.nav-item {
+    list-style: none;
+    display: inline-block;
+    padding: 6px 12px 12px 12px;
+    line-height: 24px;
+}
+
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    color: rgb(218, 7, 7);
+}
+
+/*~~~~ main ~~~~*/
+section {
+    width: 640px;
+    float: left;
+}
+
+.chi-muc {
+    margin: 12px 2px;
+}
+
+.form {
+    padding: 16px;
+    background: linear-gradient(#fffddf   ,white);
+    border-bottom: 8px solid #eac54d;
+    margin-bottom: 16px;
+}
+
+.form-item {
+    width: 100%;
+    padding: 2px;
+    margin-bottom: 6px;
+}
+
+.form table {
+    margin-top: 8px;
+    width: 100%;
+}
+
+.form button {
+    background-color: rgb(168, 2, 2);
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 2px;
+}
+
+.thong-tu,
+.thong-tu-space li  {
+    display: flex;
+    align-items: center;
+}
+
+.thong-tu {
+    background: linear-gradient(white, #fffddf);
+    padding: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.thong-tu-space li {
+    display: inline-block;
+    padding: 12px 12px 12px 0;
+}
+
+.thong-tu-space a {
+    color: red;
+}
+
+
+.thong-tu-space {
+    padding: 0 8px;
+}
+
+.thong-tu-space img {
+    width: 16px;
+}
+
+.thong-tu-left {
+    width: 400px;
+    float: left;
+    text-align: justify;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    padding-right: 12px;
+}
+
+.thong-tu-right {
+    float: right;
+}
+
+/*~~~~ aside ~~~~*/
+.content {
+    display: flex;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+aside {
+    width: 320px;
+}
+
+.aside-header {
+    width: 100%;
+}

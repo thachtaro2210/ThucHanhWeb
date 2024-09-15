@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tháng 2</title>
+</head>
+<body>
+    <script>
+        var thang = parseInt(prompt("Nhập vào tháng: "));
+       
+        switch(thang){
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                document.write("Tháng"+thang+" có 31 ngày.");
+                break;
+            case 4:    
+            case 6:    
+            case 9:    
+            case 11: 
+                document.write("Tháng " + thang + " có 30 ngày.");
+                break;
+            case 2:
+                var year = parseInt(prompt("Nhập vào năm: "));
+                if(year % 400 == 0 || (year % 100 != 0 && year % 4 == 0 )){
+                    document.write("Tháng 2 năm " + year + " có 29 ngày.");
+                }
+                else{
+                    document.write("Tháng 2 năm " + year + " có 28 ngày.");
+                }
+                break;
+            default:
+                document.write("Tháng đã nhập không hợp lệ.");
+                break;    
+        }
+    </script>
+</body>
+</html>

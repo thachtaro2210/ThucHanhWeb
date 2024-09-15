@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    padding: 0;
+    width: 500px;
+}
+
+.header, 
+.body {
+    padding: 32px;
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+}
+
+input {
+    width: 100%;
+}
+
+.body .row {
+    color: #666;
+}
+
+.body input{
+    margin: 8px 0 16px 0;
+}
+
+.body span {
+    position: relative;
+    bottom: -16px;
+}

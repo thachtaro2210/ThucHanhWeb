@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+  
+  #k6{
+    background-color: rgb(192, 202, 149);
+    width: 900px;
+    height: 500px;
+    border: 1px solid black;
+    margin-top: 15px;
+  }
+  
+  header{
+    padding-left: 9px;
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid black;
+  }
+
+  nav{
+    width: 100%;
+    height: 30px;
+    border-bottom: 1px solid black;
+    padding-left: 9px;
+  }
+
+  section{
+    padding-left: 9px;
+    float: left;
+    width: 70%;
+    height: 370px;
+  }
+.a1{
+    border-top: 1px solid black;
+    padding-left: 9px;
+    border-bottom:1px solid black;
+   }
+
+  article{
+    width: 90%;
+    height: 165px;
+    border-left:1px solid black;
+    border-right:1px solid black;
+    border-bottom:1px solid black;
+    padding-left: 9px;
+    background-color: blanchedalmond;
+  }
+  
+  aside{
+    float: right;
+    width: 30%;
+    height: 370px;
+    border-left: 1px solid black;
+    padding-left: 9px;
+  }
+.a1{
+  background-color: rgb(223, 177, 120);
+}
+
+  footer{
+    clear: both;
+    width: 100%;
+    height: 50px;
+    padding-left: 9px;
+    border-top: 1px solid black;
+  }

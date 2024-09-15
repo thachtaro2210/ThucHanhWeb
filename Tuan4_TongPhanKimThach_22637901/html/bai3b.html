@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai 3b</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../jquery 3.7.1.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        .main {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+        .container {
+            width: 620px;
+        }
+
+        .nav-pills .nav-link.active {
+            border-bottom: 2px solid rgb(255, 115, 0);
+            color: rgb(255, 115, 0) !important;
+            background-color: transparent;
+            border-radius: 0;
+        }
+
+        .nav-link {
+            padding: 0;
+            margin: 8px;
+        }
+
+        .gach {
+            font-size: 32px;
+        }
+
+        button {
+            background-color: rgb(255, 115, 0) !important;
+        }
+
+        img {
+            display: block;
+            width: 200px;
+        }
+
+        .primary {
+            color: rgb(255, 115, 0) !important;
+        }
+
+        .row {
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="container bg-light border border-dark p-3 mt-5">
+            <ul class="nav nav-pills ">
+                <li class="nav-item">
+                    <a href="#dang-nhap" class="nav-link text-secondary active" data-toggle="pill"><h3>Đăng nhập</h3></a>
+                </li>
+                <li class="gach text-secondary">/</li>
+                <li class="nav-item">
+                    <a href="#dang-ky" class="nav-link text-secondary   " data-toggle="pill"><h3>Đăng ký</h3></a>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane active" id="dang-nhap">
+                    <p class="text-secondary mt-4">
+                        Vui lòng đăng nhập trước khi mua vé để tích luỹ điểm, cơ hội nhận thêm nhiều ưu đãi từ chương trình thành viên Galaxy Cinema
+                        </p>
+                        <input type="Email" class="form-control mb-2" placeholder="Email">
+                        <input type="text" class="form-control" placeholder="Mật khẩu">
+                        <div class="text-secondary mt-3 mb-3">
+                            Quên mật khẩu?
+                        </div>
+        
+                        <button class="btn text-light form-control">ĐĂNG NHẬP</button>
+                </div>
+
+                <div class="tab-pane hide" id="dang-ky">
+                    <div class="row">
+                        <div class="col">
+                            <input type="text" placeholder="Họ tên" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <input type="number" placeholder="Số Điện Thoại" class="form-control">
+                        </div>
+                        <div class="col">
+                            <select class="form-control">
+                                <option selected disabled>chọn giới tính</option>
+                                <option value="1">nam</option>
+                                <option value="2">nữ</option>
+                                <option value="3">khác</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <input type="email" placeholder="Email" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <input type="text" placeholder="Mật khẩu" class="form-control">
+                        </div>
+                        <div class="col">
+                            <input type="text" placeholder="Xác nhận mật khẩu" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <select class="form-control">
+                                <option selected disabled>Chọn thành phố</option>
+                                <option value="1">Hồ Chí Minh</option>
+                                <option value="2">Hà Nội</option>
+                                <option value="3">Hải Phòng</option>
+                                <option value="4">Bến Tre</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <select class="form-control">
+                                <option selected disabled>Quận</option>
+                            </select>
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <input type="text" placeholder="Địa chỉ" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <input type="date" placeholder="chọn ngày" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <img src="../img/maxacthuc.png" alt="">
+                        </div>
+                        <div class="col">
+                            <input type="text" placeholder="Nhập mã captcha" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">Tôi đã đọc và đồng ý với &thinsp; <a class="primary"><b>CHÍNH SÁCH</b></a> &ThinSpace; của chương trình.</div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button class="btn form-control">ĐĂNG KÝ</button>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

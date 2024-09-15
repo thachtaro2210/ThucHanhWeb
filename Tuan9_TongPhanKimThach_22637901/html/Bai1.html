@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <script src="../bootstrap/js/jquery 3.7.1.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    
+ 
+    <script>
+        function show(){
+            var ten = $("#ten").val();
+            var gioiTinh = $("#gioi-tinh").val();
+            var sdt = $("#sdt").val();
+            var date = $("#date").val();
+            var diaChi = $("#dia-chi").val();
+            var khoa = $("#khoa").val();
+            var hocPhi = $("#hoc-phi").val();
+            var anh = $("#anh").val();
+
+            const out = $("#out");
+            const tenRegex = /^([A-Z]+[\w]*\s?)+$/;
+            let newDate = new Date(date);
+            var cur = new Date();
+
+            if (checkRong(ten) || checkRong(sdt) || checkRong(date) || checkRong(anh)) {
+                alert("Vui long khong de rong cac muc co dau *");
+                return;
+            }
+            if (!tenRegex.test(ten) || ten.length < 2) {
+                alert("Ten Phai co tu 2 ki tu tro len va viet hoa ki tu dau");
+                console.log(ten.length);
+                return;
+            }
+            if (!sdtRegex.test(sdt)) {
+                alert("So dien thoai phai co 10 chu so va bat dau bang 0");
+                console.log(sdt);
+                return;
+            }
+            if (cur.getFullYear() - newDate.getFullYear() < 15 || cur.getFullYear() - newDate.getFullYear() > 18) {
+                alert("Tuoi phai tu 15 den 18 tuoi");
+                return;
+            }
+            let i=1;
+            out.html("<tr><td>"+ (i++) +"</td><td>"+ten+"</td><td>"+gioiTinh+"</td><td>"+sdt+"</td><td>"+date+"</td><td>"+diaChi+"</td><td>"+khoa+"</td><td>"+hocPhi+"</td></tr>")
+        }
+
+
+        function checkRong(a) {
+            if (a=="") {
+                return true;
+            }
+            return false;
+        }
+        document.addEventListener("DOMContentLoaded", () => {
+            const khoa = $("#khoa");
+            khoa.change(() => {
+                console.log(khoa);
+                var hocPhi;
+                if (khoa.val()==1) {
+                    hocPhi = '5,000,000';   
+                } else if (khoa.val()==2) {
+                    hocPhi = '8,000,000';
+                } else if (khoa.val()==3) {
+                    hocPhi = '9,000,000';
+                }
+                $("#hoc-phi").val(hocPhi);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header style="height: 200x;overflow: hidden;">
+            <img src="../img/website.png" alt="" width="100%">
+        </header>
+        <nav class="nav border">
+            <a href="#" class="nav-link">Trang chu</a>
+            <a href="#" class="nav-link" id="dang-ky" data-target="#myModal" data-toggle="modal">Dang ky</a>
+        </nav>
+      
+        <section>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <td class="">STT</td>
+                        <td class="">Ho va ten</td>
+                        <td class="">Gioi tinh</td>
+                        <td class="">So dien thoai</td>
+                        <td class="">Ngay sinh</td>
+                        <td class="col-sm-3">Dia chi</td>
+                        <td class="">Khoa hoc</td>
+                        <td>Hoc phi</td>
+                    </tr>
+                </thead>
+                <tbody id="out"></tbody>
+            </table>
+        </section>
+
+          <!-- The Modal -->
+          <div class="modal" id="myModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+          
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h5 class="modal-title text-center w-100">THÔNG TIN HỌC VIÊN</h5>
+                    <button type="button" class="close" data-dismiss="modal">X</button>
+                </div>
+          
+                <!-- Modal body -->
+                <div class="modal-body" >
+                    <table>
+                        <tr>
+                            <td>Ho va ten</td>
+                            <td>
+                                <input class="form-control" type="text" name="" id="ten">
+                                <span class="text-warning">*</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Gioi tinh</td>
+                            <td>
+                                <select name="gioi tinh" id="gioi-tinh">
+                                    <option value="">chọn giới tính</option>
+                                    <option value="nam">nam</option>
+                                    <option value="nu">nu</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>So dien thoai</td>
+                            <td>
+                                <input class="form-control" type="text" name="" id="sdt">
+                                <span class="text-warning">*</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Ngay sinh</td>
+                            <td>
+                                <input class="form-control" type="date" name="" id="date">
+                                <span class="text-warning">*</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Dia chi</td>
+                            <td>
+                                <input class="form-control" type="text" name="" id="dia-chi">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Ban muon tham gia khoa nao?</td>
+                            <td>
+                                <select name="khoa" id="khoa">
+                                    <option value="0" disabled selected>Chon khoa</option>
+                                    <option value="1">2 tuan</option>
+                                    <option value="2">4 tuan</option>
+                                    <option value="3">6 tuan</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Hoc phi</td>
+                            <td>
+                                <input class="form-control" type="text" readonly id="hoc-phi">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Anh dai dien</td>
+                            <td>
+                                <input class="form-control" type="file" name="" id="anh" accept=".jpg, .png, .gif">
+                                <span class="text-warning">*</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+          
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button class="btn btn-success form-control" data-dismiss="modal" id="luu" onclick="show()" type="button">Luu</button>
+                </div>
+          
+              </div>
+            </div>
+          </div>
+    </div>
+</body>
+</html>
